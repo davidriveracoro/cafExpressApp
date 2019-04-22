@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:id="@+id/lytImgMenu"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@drawable/burrito"
+    android:orientation="vertical">
+
+
+    <TextView
+        android:id="@+id/txtVwTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="TextView"
+        android:paddingTop="15dp"
+        android:textColor="@color/colorFont"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+</LinearLayout>
