@@ -1,4 +1,4 @@
-package com.example.cafeapp;
+package com.example.cafeapp.Adapters;
 
 import android.app.Activity;
 import android.content.Context;
@@ -11,24 +11,31 @@ import android.widget.ArrayAdapter;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
-public class MenuAdapter extends ArrayAdapter<Menu> {
+import com.example.cafeapp.Models.Menu;
+import com.example.cafeapp.Models.Producto;
+import com.example.cafeapp.R;
+
+import java.util.ArrayList;
+
+public class ListaProductosAdapter extends ArrayAdapter<Producto> {
     private Context cApp;
     private int iMyLayout;
 
-    private Menu[] amDatos;
+//    private Menu[] amDatos;
+    private Producto[] apDatos;
 
-    public MenuAdapter(@NonNull Context context, int resource, @NonNull Menu[] objects) {
+    public ListaProductosAdapter(@NonNull Context context, int resource, @NonNull Producto[] objects) {
         super(context, resource, objects);
         cApp = context;
         iMyLayout = resource;
-        amDatos = objects;
+        apDatos = objects;
     }
+
 
     @Override
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
-//        return super.getView(position, convertView, parent);
-        LinearLayout lytImgMenu;
-        TextView txtVwTitle;
+
+        TextView txtVwNomProd,txtVwPrecio;
 
         View vwMyLayout = convertView;
 
@@ -38,15 +45,13 @@ public class MenuAdapter extends ArrayAdapter<Menu> {
 
         }
 
-        lytImgMenu = vwMyLayout.findViewById(R.id.lytImgMenu);
-        txtVwTitle = vwMyLayout.findViewById(R.id.txtVwTitle);
+        txtVwPrecio = vwMyLayout.findViewById(R.id.txtVwPrecio);
+        txtVwNomProd = vwMyLayout.findViewById(R.id.txtVwNomProd);
 
-        Menu mDato = amDatos[position];
-        lytImgMenu.setBackgroundResource(mDato.getImg_menu());
-        txtVwTitle.setText(mDato.getTitle());
+        Producto pDato = apDatos[position];
+        txtVwPrecio.setText("$"+pDato.getPrecio());
+        txtVwNomProd.setText(pDato.getNomProd());
 
         return vwMyLayout;
-
     }
 }
-
