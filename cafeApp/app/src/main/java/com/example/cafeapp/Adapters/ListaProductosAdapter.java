@@ -21,7 +21,6 @@ public class ListaProductosAdapter extends ArrayAdapter<Producto> {
     private Context cApp;
     private int iMyLayout;
 
-//    private Menu[] amDatos;
     private Producto[] apDatos;
 
     public ListaProductosAdapter(@NonNull Context context, int resource, @NonNull Producto[] objects) {

@@ -20,6 +20,15 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     ListView lstMenu;
     static ArrayList<Producto> apDatonLoco;
     Producto pProd;
+
+    /**
+     * DESAYUNOS -> 1
+     * LIGEROS -> 2
+     * BURRITOS -> 3
+     * SNACKS -> 4
+     * HAMBURGUESAS -> 5
+     * TORTAS -> 6
+     */
     static Menu[] amDatosLocos = {
             new Menu(R.drawable.burrito,"DESAYUNOS"),
             new Menu(R.drawable.cake,"LIGEROS"),
@@ -44,6 +53,8 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+        int iVal = ((int) id) + 1;
+        inListaProductos.putExtra("idMenu",iVal);
         startActivity(inListaProductos);
     }
 }
