@@ -1,24 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<LinearLayout
     android:orientation="vertical"
-    tools:context=".Activities.ListaProductosActivity">
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/txtVwTitleMenu"
+        android:id="@+id/txtTitleAddProduct"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="TIPO"
+        android:gravity="center"
+        android:text="AGREGAR CANTIDAD"
         android:textSize="24sp"
         android:textStyle="bold" />
 
-    <ListView
-        android:id="@+id/lstProd"
+    <EditText
+        android:id="@+id/edtTxtCant"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="2.."
+        android:inputType="number" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -26,21 +27,17 @@
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/btnFinalizar"
+            android:id="@+id/btnCancelarAddProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="FINALIZAR" />
+            android:text="CANCELAR" />
 
         <Button
-            android:id="@+id/btnAddMore"
+            android:id="@+id/btnAddProduct"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:onClick="onClick"
-            android:text="AGERAR MÁS" />
+            android:text="AGREGAR CARRITO" />
     </LinearLayout>
-
-
 </LinearLayout>
