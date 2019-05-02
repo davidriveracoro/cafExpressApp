@@ -1,6 +1,10 @@
 package com.example.cafeapp.Models;
 
-public class Producto {
+import java.io.Serializable;
+
+@SuppressWarnings("serial")
+public class Producto implements Serializable {
+    private int idProd;
     private String nomProd;
     private int precio;
     private int idMenu;
@@ -11,6 +15,13 @@ public class Producto {
     }
 
     public Producto(String nomProd, int precio, int idMenu) {
+        this.nomProd = nomProd;
+        this.precio = precio;
+        this.idMenu = idMenu;
+    }
+
+    public Producto(int idProd, String nomProd, int precio, int idMenu) {
+        this.idProd = idProd;
         this.nomProd = nomProd;
         this.precio = precio;
         this.idMenu = idMenu;
