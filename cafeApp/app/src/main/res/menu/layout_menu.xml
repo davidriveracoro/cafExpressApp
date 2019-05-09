@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:id="@+id/opcMirar" android:title="Mirar pedidos"></item>
+    <item android:id="@+id/opcNew" android:title="Nuevo pedido"></item>
+    <item android:id="@+id/opcConf" android:title="Configuración"></item>
+
+</menu>

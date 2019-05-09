@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -76,5 +77,27 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
 
         }
 
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(android.view.Menu menu) {
+        getMenuInflater().inflate(R.menu.layout_menu,menu);
+        return true;
+//        return super.onCreateOptionsMenu(menu);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+
+        switch (item.getItemId()){
+            case R.id.opcMirar:
+                return true;
+            case R.id.opcNew:
+                return true;
+            case R.id.opcConf:
+                return true;
+
+        }
+        return super.onOptionsItemSelected(item);
     }
 }
