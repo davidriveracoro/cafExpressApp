@@ -8,6 +8,7 @@ public class Producto implements Serializable {
     private String nomProd;
     private int precio;
     private int idMenu;
+    private int tiempo;
 
     public Producto(String nomProd, int precio) {
         this.nomProd = nomProd;
@@ -25,6 +26,14 @@ public class Producto implements Serializable {
         this.nomProd = nomProd;
         this.precio = precio;
         this.idMenu = idMenu;
+    }
+
+    public Producto(int idProd, String nomProd, int precio, int idMenu, int tiempo) {
+        this.idProd = idProd;
+        this.nomProd = nomProd;
+        this.precio = precio;
+        this.idMenu = idMenu;
+        this.tiempo = tiempo;
     }
 
     public String getNomProd() {
@@ -49,5 +58,21 @@ public class Producto implements Serializable {
 
     public void setIdMenu(int idMenu) {
         this.idMenu = idMenu;
+    }
+
+    public int getIdProd() {
+        return idProd;
+    }
+
+    public void setIdProd(int idProd) {
+        this.idProd = idProd;
+    }
+
+    public int getTiempo() {
+        return tiempo;
+    }
+
+    public void setTiempo(int tiempo) {
+        this.tiempo = tiempo;
     }
 }

@@ -40,23 +40,52 @@
         android:layout_height="wrap_content"
         android:text="TOTAL:" />
 
+    <RadioGroup
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <RadioButton
+            android:id="@+id/rbtnPoint"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="MIS PUNTOS" />
+
+        <RadioButton
+            android:id="@+id/rbtnTarjeta"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+
+            android:text="TARJETA" />
+
+        <RadioButton
+            android:id="@+id/rbtnPay"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="PAYPAL" />
+    </RadioGroup>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="horizontal">
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnComprar"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickBtn"
+            android:text="COMPRAR" />
 
         <Button
-            android:id="@+id/button2"
+            android:id="@+id/btnCanCart"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:text="Button" />
+            android:onClick="onClickBtn"
+            android:text="CANCELAR" />
     </LinearLayout>
 </LinearLayout>

@@ -59,6 +59,7 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
         int iVal = ((int) id) + 1;
         inListaProductos.putExtra("idMenu",iVal);
+        inListaProductos.putExtra("title",amDatosLocos[position].getTitle());
         inListaProductos.putExtra("myCart",myCart);
         startActivityForResult(inListaProductos,REQUEST_CART);
 //        startActivity(inListaProductos);
@@ -71,12 +72,8 @@ public class MainActivity extends AppCompatActivity implements ListView.OnItemCl
         if(requestCode == REQUEST_CART){
             if(resultCode == RESULT_OK){
                 myCart = (Carrito) data.getSerializableExtra("myCart");
-            }else{
-                Toast.makeText(getApplicationContext(),"Feel bad",Toast.LENGTH_SHORT).show();
             }
-
         }
-
     }
 
     @Override

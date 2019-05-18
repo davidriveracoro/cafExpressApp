@@ -44,23 +44,23 @@ public class ListaProductosActivity extends AppCompatActivity implements ListVie
      * TORTAS -> 6
      */
     Producto[] arrayProducts = {
-            new Producto("Huevos al gusto",35,1),
-            new Producto("Quesadillas",25,1),
+            new Producto(1,"Huevos al gusto",35,1,143),
+            new Producto(2,"Quesadillas",25,1,233),
 
-            new Producto("Ensalada verde con atún",35,2),
-            new Producto("Coctel de frutas",25,2),
+            new Producto(3,"Ensalada verde con atún",35,2,35),
+            new Producto(4,"Coctel de frutas",25,2,346),
 
-            new Producto("Burritos",15,3),
-            new Producto("Burritos de lomo",16,3),
+            new Producto(5,"Burritos",15,3,324),
+            new Producto(6,"Burritos de lomo",16,3,145),
 
-            new Producto("Nachos",25,4),
-            new Producto("Papas a la francesa",20,4),
+            new Producto(7,"Nachos",25,4,653),
+            new Producto(8,"Papas a la francesa",20,4,256),
 
-            new Producto("Haburguesa sencilla",30,5),
-            new Producto("Hamburgesa hawaiiana",35,5),
+            new Producto(9,"Haburguesa sencilla",30,5,76),
+            new Producto(10,"Hamburgesa hawaiiana",35,5,235),
 
-            new Producto("Torta de chile relleno",30,6),
-            new Producto("Torta de lomo",35,6)
+            new Producto(11,"Torta de chile relleno",30,6,865),
+            new Producto(12,"Torta de lomo",35,6,754)
     };
     Producto[] arrayProductByMenu;
 
@@ -68,12 +68,16 @@ public class ListaProductosActivity extends AppCompatActivity implements ListVie
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_lista_productos);
+        inDatosCart = new Intent();
 
+        txtVwTitleMenu = findViewById(R.id.txtVwTitleMenu);
+        txtVwTitleMenu.setText(getIntent().getStringExtra("title"));
         inCart = new Intent(this,CartActivity.class);
         idMenu = getIntent().getIntExtra("idMenu",1);
         alProd = new ArrayList<>();
         alCant = new ArrayList<>();
         arrayProductByMenu = getProductByMenu(arrayProducts,idMenu);
+
 
         myCart = (Carrito) getIntent().getSerializableExtra("myCart");
 
@@ -94,11 +98,9 @@ public class ListaProductosActivity extends AppCompatActivity implements ListVie
 
     }
 
-    public void onClick(View v){
+    public void onClickListProd(View v){
         switch (v.getId()){
             case R.id.btnAddMore:
-                //TODO: Pasar carrito a otros activities
-                inDatosCart = new Intent();
                 inDatosCart.putExtra("myCart",myCart);
                 setResult(Activity.RESULT_OK,inDatosCart);
                 finish();
@@ -112,9 +114,12 @@ public class ListaProductosActivity extends AppCompatActivity implements ListVie
                 myCart.setiCant(aCant);
                 inCart.putExtra("myObj",myCart);
                 startActivity(inCart);
+
                 break;
         }
     }
+
+
 
     @Override
     public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
@@ -211,6 +216,11 @@ public class ListaProductosActivity extends AppCompatActivity implements ListVie
             case R.id.opcMirar:
                 return true;
             case R.id.opcNew:
+                myCart = null;
+                inDatosCart = new Intent();
+                inDatosCart.putExtra("myCart",myCart);
+                setResult(Activity.RESULT_OK,inDatosCart);
+                finish();
                 return true;
             case R.id.opcConf:
                 return true;
